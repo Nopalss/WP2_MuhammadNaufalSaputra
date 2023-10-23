@@ -9,8 +9,9 @@ class Matakuliah extends CI_Controller
 
     public function cetak()
     {
-        $this->form_validation->set_rules('kode', 'Kode Matakuliah', 'required|min_length[3]', [
+        $this->form_validation->set_rules('kode', 'Kode Matakuliah', 'required|min_length[3]|numeric', [
             'required' => 'Kode Matakuliah Harus diisi',
+            'numeric' => "Kode Harus Berupa Angka",
             'min_lenght' => 'Kode terlalu pendek'
         ]);
 
@@ -27,11 +28,8 @@ class Matakuliah extends CI_Controller
                 'nama' => $this->input->post('nama'),
                 'sks' => $this->input->post('sks')
             ];
+            $this->load->view("view-data-matakuliah", $data);
         }
-
-        $this->load->view("view-data-matakuliah", $data);
-
     }
-
 }
 ?>
