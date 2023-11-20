@@ -4,7 +4,7 @@ class Matakuliah extends CI_Controller
     public function index()
 
     {
-        $this->load->view('view-form-matakuliah');
+        $this->load->view('View-form-matakuliah');
     }
 
     public function cetak()
